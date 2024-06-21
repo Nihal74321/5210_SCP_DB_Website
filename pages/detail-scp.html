@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> - SCP Foundation</title>
+
+    <link rel="icon" href="../assets/icon/scp-logo-main-white-transparent.png">
+
+    <link rel="stylesheet" href="../styles/container-new-content.css">
+    <link rel="stylesheet" href="../styles/explore-page-styling.css">
+    <link rel="stylesheet" href="../styles/nav-bar-styling.css">
+    
+    <link rel="stylesheet" href="../styles/style.css">
+
+    <link rel="stylesheet" href="../styles/detail-page-styling.css">
+
+    <link rel="stylesheet" href="../styles/create-form-f-back.css">
+</head>
+<body>  
+    <div class="nav-bar-container">
+        <img src="../assets/icon/scp-logo-main-true-transparent-white.png" alt="" class="nav-bar-logo" onclick="home()">
+        <div class="nav-link-container">
+            <a href="./create-scp.html">Create</a>
+        </div>
+    </div>
+    <section class="detail-wrapper">
+        <div class="d-img-container">
+            <div class="img-option-container-mb_rspn">
+                <img src="../public/images/presets/scp-user-preset-01.png" alt="" class="d-img">
+            </div>
+            <div class="d-glance-inf-container">
+                <h1 class="d-name">SCP Name</h1>
+                <div class="d-identity-container">
+                    <p class="d-identifier">SCP-2025</p>
+                    <p class="d-class">Class</p>
+                </div>
+            </div>
+            <div class="d-option-container">
+                <div class="d-option-outline" id="open">
+                    <img src="../assets/asset-pack-main/ellipsis-solid.svg" alt="" class="d-options">
+                </div>
+                <div class="d-option-content-container" id="menu">
+                    <button class="d-c-option d-update" onclick="showUContext()">Update SCP <img src="../assets/asset-pack-main/plus-solid.svg" alt="" class="d-c-image u-img"></button>
+                    <button class="d-c-option d-delete" onclick="confirmDelete()">Delete SCP <img src="../assets/asset-pack-main/minus-solid.svg" alt="" class="d-c-image del-img"></button>
+                </div>
+            </div>
+        </div>
+        <div class="d-inf-container">
+            <div class="d-desc-container d-inf-small-container">
+                <h1 class="d-desc-title d-title">Description</h1>
+                <p class="d-desc-text d-text-container">Your Description goes here.</p>
+            </div>
+            <div class="d-cont-container d-inf-small-container">
+                <h1 class="d-cont-title d-title">Containment Procedures</h1>
+                <p class="d-cont-text d-text-container">Your Containment procedures go here</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="d-update-context-form">
+        <div class="d-update-wrapper">
+            <div class="d-context-header-container">
+                <h1 class="d-c-header">Update</h1>
+                <div class="d-close-container" onclick="closeUContext()">
+                    <img src="../assets/asset-pack-main/x-solid.svg" alt="" class="d-c-close">
+                </div>
+            </div>
+            <div class="d-preview-container">
+                <div class="d-p-img-container">
+                    <img src="../public/images/presets/scp-user-preset-01.png" alt="" class="d-u-img">
+                </div>
+                <div class="d-p-glance-inf-container">
+                    <h1 class="d-p-g-name">SCP Name</h1>
+                    <div class="d-p-glance-identity">
+                        <p class="d-p-glance-item">SCP-2025</p>
+                        <p class="d-p-glance-class">Class</p>
+                    </div>
+                </div>
+            </div>
+            <div class="update-context-container">
+                <form action="" class="update-context">
+                    <div class="u-i-container u-name-container">
+                        <input type="text" class="u-name u-input" required>
+                        <label for="" class="u-n-l u-label">Name</label>
+                    </div>
+                    <div class="u-i-container u-item-container">
+                        <input type="text" class="u-item u-input" required>
+                        <label for="" class="u-it-l u-label">Item</label>
+                    </div>
+                    <div class="u-i-container u-class-container">
+                        <input type="text" class="u-class u-input" required>
+                        <label for="" class="u-c-l u-label">Class</label>
+                    </div>
+                    <div class="u-desc-container u-large-container">
+                        <textarea type="text" class="u-desc u-input u-large-input" required></textarea>
+                        <label for="" class="u-d-l u-label">Description</label>
+                    </div>
+                    <div class="u-cont-container u-large-container">
+                        <textarea type="text" class="u-cont u-input u-large-input" required></textarea>
+                        <label for="" class="u-co-l u-label">Containment Procedures</label>
+                    </div>
+                    <div class="u-btn-container">
+                        <button type="submit" class="u-submit-btn">Done</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section class="context-form-del">
+        <div class="del-context-wrapper">
+            <div class="s-c-text-container">
+                <h1>Delete SCP</h1>
+                <p>Are you sure you want to delete this SCP?</p>
+            </div>
+            <div class="s-c-button-container">
+                <button class="delete-btn-main">Confirm</button>
+                <button onclick="closeConfirmDelete()">Cancel</button>
+            </div>
+        </div>
+    </section>
+    <section class="context-choose-option">
+        <div class="c-option-container">
+            <button class="choose-update" onclick="showUContext()">Update SCP</button>
+            <button class="choose-del" onclick="confirmDelete()">Delete SCP</button>
+            <button class="cancel-options" onclick="closeOptContext()">Cancel</button>
+        </div>
+    </section>
+    <script src="../scripts/detail-draw.js"></script>
+    <script>
+        function home() {
+            window.location.href = '../index.html'
+        }
+    </script>
+</body>
+</html>

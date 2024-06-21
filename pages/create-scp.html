@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create An SCP - SCP Foundation</title>
+    
+    <link rel="icon" href="../assets/icon/scp-logo-main-white-transparent.png">
+
+    <link rel="stylesheet" href="../styles/container-new-content.css">
+    <link rel="stylesheet" href="../styles/explore-page-styling.css">
+    
+    <link rel="stylesheet" href="../styles/nav-bar-styling.css">
+    
+    <link rel="stylesheet" href="../styles/state-conf-styling.css">
+    
+    <link rel="stylesheet" href="../styles/style.css">
+
+    <!-- <link rel="stylesheet" href="../styles/create-form-styling.css"> -->
+     <link rel="stylesheet" href="../styles/create-form-f-back.css">
+</head>
+<body>
+    <div class="nav-bar-container">
+        <img src="../assets/icon/scp-logo-main-true-transparent-white.png" alt="" class="nav-bar-logo" onclick="home()">
+        <div class="nav-link-container">
+            <a href="./create-scp.html">Create</a>
+        </div>
+    </div>
+    <section class="explore-main create-main-header" id="explore-se-container">
+        <div class="explore-title-container" id="explore-title-dyn">
+            <h1 id="explore-editable-title">Create</h1>
+        </div>
+    </section>
+
+    <section class="f-main-container">
+        <div class="f-t-container">
+            <h1 class="f-t-title">Create a New SCP</h1>
+            <p class="f-t-subtext">Fill in this form and see your SCP on the Home Page.</p>
+        </div>
+        <div class="f-wrapper">
+            <form id="create-new-scp" class="f-container" action="../scripts/create-scp.php" method="post">
+                <div class="f-scroll"></div>
+                <h1 class="f-header">Name</h1>
+                <div class="f-identifier-container">
+                    <div class="item-container">
+                        <span class="f-item-number">SCP-2025</span>
+                        <img src="../assets/asset-pack-main/plus-solid-white.svg" alt="" class="learn-more-item-mobile" onclick="showInf()">
+                    </div>
+                    <div class="f-input-container">
+                        <input class="f-input f-content-editable" type="text" name="name" id="f-i-name" required autocomplete="off">
+                        <label for="f-i-name" class="f-label" id="f-l-name"> Name</label>
+                    </div>
+                </div>
+                <div class="f-detail-header-container">
+                    <p class="f-text">*This is Auto-Generated.</p>
+                    <p class="f-text">*Give Your SCP a Name.</p>
+                </div>
+    
+                <h1 class="f-header f-h-latter">Details</h1>
+                <div class="f-detail-container">
+                    <div class="f-input-container">
+                        <input class="f-input f-long-input f-content-editable" type="text" name="class" id="f-i-class" required autocomplete="off">
+                        <label for="f-i-class" class="f-label" id="f-l-class"> Class</label>
+                    </div>
+    
+                    <p class="f-text f-bottom-padding">*Give your SCP a class.</p>
+    
+                    <div class="f-input-container">
+                        <textarea class="f-large-content-container desc f-content-editable" name="description" id="f-i-desc" required></textarea>
+                        <label for="f-i-desc" class="f-label" id="f-l-desc"> Description</label>
+                    </div>
+    
+                    <p class="f-text f-bottom-padding">*Describe Your SCP.</p>
+                    
+                    <div class="f-input-container">
+                        <textarea class="f-large-content-container cont f-content-editable" name="containment" id="f-i-cont" required></textarea>
+                        <label for="f-i-cont" class="f-label" id="f-l-cont">Containment Information</label>
+                    </div>
+                    
+                    <p class="f-text f-bottom-padding">*How Your SCP is Being Contained.</p>
+                </div>
+                <h1 class="f-header f-h-img">Image</h1>
+                <p class="f-img-stitle">Choose One of our four Images for your SCP</p>
+                <div class="f-img-container">
+                    <img src="../public/images/presets/scp-user-preset-01_fire.png" class="f-image" alt="">
+                    <img src="../public/images/presets/scp-user-preset-02_fire.png" class="f-image" alt="">
+                    <img src="../public/images/presets/scp-user-preset-03_fire.png" class="f-image" alt="">
+                    <img src="../public/images/presets/scp-user-preset-04_fire.png" class="f-image" alt="">
+                </div>
+                <div class="f-color-picker-title">
+                    <h1 class="f-c_picker-header f-header">Colour</h1>
+                    <p class="f-c_picker-subtext f-img-stitle">And the Colour</p>
+                </div>
+                <div class="f-img-color-container">
+                    <div class="f-color-container f-color-selected f-color-1">
+                        <div class="f-color_1 color-option_1"></div>
+                        <div class="f-color_2 color-option_1_secondary"></div>
+                    </div>
+                    <div class="f-color-container f-color-2">
+                        <div class="f-color_1 color-option_2"></div>
+                        <div class="f-color_2 color-option_2_secondary"></div>
+                    </div>
+                    <div class="f-color-container f-color-3">
+                        <div class="f-color_1 color-option_3"></div>
+                        <div class="f-color_2 color-option_3_secondary"></div>
+                    </div>
+                    <div class="f-color-container f-color-4">
+                        <div class="f-color_1  color-option_4"></div>
+                        <div class="f-color_2 color-option_4_secondary"></div>
+                    </div>
+                </div>
+                <input type="hidden" id="image_source" name="image_source" value="../public/images/presets/scp-user-preset-01_fire.png">
+                <button class="f-next-btn f-h-end" type="button" onclick="f_next_btn()">Next</button>
+            </form>
+            <div class="f-preview-wrapper">
+                <div class="f-preview-container">
+                    <div class="f-p-img-container">
+                        <img src="../public/images/presets/scp-user-preset-01.png" alt="" class="f-p-img">
+                    </div>
+                    <div class="f-p-identity-container">
+                        <h1 class="f-p-name">Your SCP's name</h1>
+                        <div class="f-p-class-item-container">
+                            <p class="f-p-item">SCP-2024</p>
+                            <p class="f-p-class">Your SCP's class</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="f-preview-detail-container">
+                    <div class="f-preview-desc-container">
+                        <h1 class="f-p-desc-title">Description</h1>
+                        <div class="f-p-desc-dynamic f-p-dynamic">
+                            <p class="f-p-desc">Your Description goes here.</p>
+                        </div>
+                    </div>
+                    <div class="f-preview-desc-container">
+                        <h1 class="f-p-desc-title">Containment Procedures</h1>
+                        <div class="f-p-cont-dynamic f-p-dynamic">
+                            <p class="f-p-cont">Your Containment Procedures go here.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="f-finish-wrapper">
+            <div class="f-message-container">
+                <h1 class="f-f-header">Your Brand New SCP.</h1>
+                <p class="f-f-subtext">Just the way you designed it.</p>
+            </div>
+            <div class="f-finish-review">
+                <div class="f-finish-container">
+                    <img class="f-finish-img" src="../public/images/presets/scp-user-preset-01_fire.png" alt="">
+                    <div class="f-f-detail-container">
+                        <h1 class="f-finish-name">SCP Name</h1>
+                        <div class="f-f-identity-container">
+                            <p class="f-finish-identity">SCP-2025</p>
+                            <p class="f-finish-class">Class</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="f-finish-btn-container">
+                    <div class="f-f-c_box-container">
+                        <input type="checkbox" name="consent" id="f-c_box" class="f-f-c_box" onchange="handle_btn()">
+                        <label for="f-c_box" class="f-f-c_box-label">By ticking this I consent to my SCP being displayed on the website.</label>
+                    </div>
+                    <button class="f-submit-btn" type="submit" id="f-s_btn" disabled>Done</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="context-form">
+        <div class="sucessful-context-wrapper">
+            <div class="s-c-img-container">
+                <div class="s-c-img-border">
+                    <svg class ="s-c-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" fill="#41ea44"/></svg>
+                </div>
+            </div>
+            <div class="s-c-text-container">
+                <h1>SCP Created</h1>
+                <p>Your creation can now be viewed in the home page.</p>
+            </div>
+            <div class="s-c-button-container">
+                <button onclick="home()">Return Home</button>
+            </div>
+        </div>
+    </section>
+    <section class="context-form-error">
+        <div class="failure-context-wrapper">
+            <div class="s-c-img-container">
+                <div class="f-c-img-border">
+                    <svg class="f-c-img"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z" fill="#e21f11"/></svg>
+                </div>
+            </div>
+            <div class="s-c-text-container">
+                <h1>Something went wrong</h1>
+                <p>Please try again.</p>
+            </div>
+            <div class="s-c-button-container">
+                <button onclick="refresh()">Return</button>
+            </div>
+        </div>
+    </section>
+    <section class="mobile-item-info">
+        <div class="mobile-info-wrapper">
+            <div class="close-info-container">
+                <img src="../assets/asset-pack-main/x-solid-white.svg" alt="" onclick="hideInf()">
+            </div>
+            <p class="mobile-info-expand">The SCP Number is generated <span>automatically,</span> but can be updated in its detail page.</p>
+        </div>
+    </section>
+    <script src="../scripts/form-script.js"></script>
+    <script src="../scripts/form-shorten-word.js" type="module"></script>
+    <script>
+        const item_num = document.querySelector('.f-item-number')
+        let sanitize_to_item = 0
+        fetch('../scripts/featured-content.php')
+        .then(response => response.json())
+        .then(data => {
+            sanitize_to_item = parseInt(data[0].id) + 2015
+            item_num.textContent = "SCP-" + sanitize_to_item;
+        })
+        .catch(error => {
+            console.log("error: ", error)
+        })
+    </script>
+    <script>
+        const form = document.getElementById('create-new-scp');
+        const context_menu = document.querySelector('.context-form')
+        const context_fail = document.querySelector('.context-form-error')
+        const submitBtn = document.querySelector('.f-submit-btn');
+        const section_show = document.querySelector('.mobile-item-info')
+        const inf_container = document.querySelector('.mobile-info-wrapper')
+        const sel_img = document.querySelector('.f-finish-img')
+    
+        submitBtn.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default button click behavior
+    
+            // Validate form inputs if needed (optional)
+            if (name_input.value === "" || class_input.value === "" || desc_input.value === "" || cont_input.value === "") {
+                callContextFail()
+                return;
+            }
+    
+            // Serialize form data into a FormData object
+            const formData = new FormData(form);
+            formData.set("image_source", sel_img.src)
+    
+            // Send the form data to your PHP script using fetch
+            fetch('../scripts/create-scp.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(formData.get("image_source"))
+                callContextSuccess()
+            })
+            .catch((error) => {
+                callContextFail()
+            });
+        });
+        function callContextSuccess() {
+            document.body.style.overflowY = 'hidden'
+            context_menu.style.display = "flex"
+        }
+        function callContextFail() {
+            document.body.style.overflowY = 'hidden'
+            context_fail.style.display = "flex"
+        }
+        document.addEventListener("scroll", ()=> {
+            let context_max_filtered = `${document.body.getBoundingClientRect().top * -1}px`
+            context_fail.style.top = context_max_filtered
+            context_menu.style.top = context_max_filtered
+            section_show.style.top = context_max_filtered
+        })
+        function showInf() {
+            document.body.style.overflowY = "hidden"
+            inf_container.style.animation = "anim_in 500ms"
+            section_show.style.display = "flex"
+        }
+        function hideInf() {
+            document.body.style.overflowY = "scroll"
+            inf_container.style.animation = "anim_out 500ms"
+            setTimeout(() => {
+                section_show.style.display = "none"
+            }, 220);
+        }
+    </script>
+    <script>
+        function home() {
+            window.location.href = '../index.html'
+        }
+        function refresh() {
+            window.location.href = './create-scp.html'
+        }
+    </script>
+</body>
+</html>
